@@ -15,6 +15,7 @@ fi
 
 for f in /etc/apache2/conf-available/svn.conf /perltest.pl; do
 sed -i \
+    -e 's|BASEPATH|'"$BASEPATH"'|' \
     -e 's|LDAP_CONFIG_VERBOSE|'"$LDAP_CONFIG_VERBOSE"'|' \
     -e 's|LDAP_READ_DN|'"$LDAP_READ_DN"'|' \
     -e 's|LDAP_WRITE_DN|'"$LDAP_WRITE_DN"'|' \
