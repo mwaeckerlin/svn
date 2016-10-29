@@ -1,4 +1,5 @@
-FROM ubuntu
+# no libapache2-mod-macro in xenial
+FROM ubuntu:trusty
 MAINTAINER mwaeckerlin
 
 ENV BASEPATH ""
