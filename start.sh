@@ -13,7 +13,6 @@ if test -n "$LDAP_BIND_DN"; then
     LDAP_BIND_DN=${LDAP_BIND_DN},${LDAP_BASE}
 fi
 
-for f in /etc/apache2/conf-available/svn.conf /perltest.pl; do
 sed -i \
     -e 's|BASEPATH|'"$BASEPATH"'|' \
     -e 's|LDAP_CONFIG_VERBOSE|'"$LDAP_CONFIG_VERBOSE"'|' \
@@ -32,8 +31,7 @@ sed -i \
     -e 's|LDAP_BIND_PWD|'"$LDAP_BIND_PWD"'|' \
     -e 's|LDAP_MEMBER_UID|'"$LDAP_MEMBER_UID"'|' \
     -e 's|LDAP_GROUP_ATTR_IS_DN|'"$LDAP_GROUP_ATTR_IS_DN"'|' \
-    $f
-#/etc/apache2/conf-available/svn.conf
+    /etc/apache2/conf-available/svn.conf
 done
 
 if test -f /run/apache2/apache2.pid; then
