@@ -25,6 +25,8 @@ RUN apt-get install -y apache2 libapache2-mod-svn libapache2-mod-perl2 libnet-ld
 RUN a2enmod dav_svn ldap authnz_ldap perl macro
 ADD svn.conf /etc/apache2/conf-available/svn.conf
 RUN a2enconf svn
+RUN ln -sf /proc/self/fd/1 /var/log/apache2/access.log && \
+    ln -sf /proc/self/fd/2 /var/log/apache2/error.log
 ADD start.sh /start.sh
 CMD /start.sh
 

@@ -32,7 +32,6 @@ sed -i \
     -e 's|LDAP_MEMBER_UID|'"$LDAP_MEMBER_UID"'|' \
     -e 's|LDAP_GROUP_ATTR_IS_DN|'"$LDAP_GROUP_ATTR_IS_DN"'|' \
     /etc/apache2/conf-available/svn.conf
-done
 
 if test -f /run/apache2/apache2.pid; then
     rm /run/apache2/apache2.pid;
